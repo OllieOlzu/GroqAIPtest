@@ -6,8 +6,9 @@ const Groq = require('groq-sdk');
 const app = express();
 const port = 3000;
 
-// PASTE YOUR GROQ API KEY HERE
-const groq = new Groq({ apiKey: "Hehe" });
+const groq = new Groq({
+  apiKey: process.env.GROQ_API_KEY
+});
 
 // Middleware
 app.use(cors()); // Allows the frontend to talk to this backend
